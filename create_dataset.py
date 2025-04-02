@@ -27,7 +27,7 @@ for dir_ in os.listdir(DATA_DIR):
             for hand_landmarks in results.multi_hand_landmarks:
                 for i in range(len(hand_landmarks.landmark)):
                     x = hand_landmarks.landmark[i].x
-                    y = hand_landmarks.landmark[i].y
+                    y = hand_landmarks.landmark[i].ys
                     data_aux.append(x)
                     data_aux.append(y)
                     
