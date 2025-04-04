@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import numpy as np
 
-data_dict = pickle.load(open('C://data/data.pickle', 'rb'))
+data_dict = pickle.load(open('/data.pickle', 'rb'))
 
 data = np.asarray(data_dict['data'])
 labels = np.asarray(data_dict['labels'])
@@ -23,5 +23,5 @@ score = accuracy_score(y_predict, y_test)
 print('{}% of samples were classified correctly !'.format(score * 100))
 
 f = open('model.p', 'wb')
-pickle.dump({'data': data, }, f)
+pickle.dump({'model': model}, f)
 f.close()

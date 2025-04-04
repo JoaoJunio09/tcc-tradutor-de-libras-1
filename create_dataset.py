@@ -12,7 +12,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 
 hands = mp_hands.Hands(static_image_mode = True, min_detection_confidence = 0.3)
 
-DATA_DIR = 'C://data'
+DATA_DIR = '/data_img/'
 
 data = []
 labels = []
@@ -27,7 +27,7 @@ for dir_ in os.listdir(DATA_DIR):
             for hand_landmarks in results.multi_hand_landmarks:
                 for i in range(len(hand_landmarks.landmark)):
                     x = hand_landmarks.landmark[i].x
-                    y = hand_landmarks.landmark[i].ys
+                    y = hand_landmarks.landmark[i].y
                     data_aux.append(x)
                     data_aux.append(y)
                     
